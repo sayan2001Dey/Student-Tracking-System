@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+
+{% block title %}
+Signin
+{% endblock title %}
+
+
+
+
+{% block css_link %}
+<link rel="stylesheet" href="{% static 'style13.css' %}" />
+{% endblock css_link %}
+
+
+
+
+
+
+
+{% block style %}
+<style>
+  body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: url("img4.jpg");
+  }
+
+
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(134, 131, 161);
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  #log {
+    margin: 0px 10px;
+    padding: 0px 10px;
+
+  }
+
+  #log a {
+    float: right;
+    background-color: #0b71d1;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+
+  .register .nav-tabs {
+    margin-top: 3%;
+    border: none;
+    background: #0062cc;
+    border-radius: 1.5rem;
+    width: 28%;
+    float: right;
+  }
+
+  .register .nav-tabs .nav-link {
+    padding: 2%;
+    height: 34px;
+    font-weight: 600;
+    color: #fff;
+    border-top-right-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+
+  .register .nav-tabs .nav-link:hover {
+    border: none;
+  }
+
+  .register .nav-tabs .nav-link.active {
+    width: 109px;
+    color: #0062cc;
+    border: 2px solid #0062cc;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+
+  .register-heading {
+    text-align: center;
+    margin-top: 8%;
+    margin-bottom: -15%;
+    color: #495057;
+  }
+</style>
+{% endblock style %}
+
+
+
+
+
+
+
+{% block content %}
+<div class="container">
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="{% url 'authentication:login' %}" class="sign-in-form" method="POST">
+        {% csrf_token %}
+        <h2 class="title">Sign in</h2>
+
+        <select name="role" id="" class="custom-select" required>
+
+          <option value="student">STUDENT</option>
+          <option value="professor">PROFESSOR</option>
+          <option value="cdc">CDC</option>
+        </select>
+
+
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" name="username" placeholder="Username" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" name="password" placeholder="Password" />
+        </div>
+        <a href="{% url 'password_reset' %}">Forgot password?</a>
+        <input type="submit" value="Login" class="btn solid" />
+
+      </form>
+      <form action="{% url 'authentication:signup' %}" class="sign-up-form" method="POST">
+        {% csrf_token %}
+        <h2 class="title">Sign up</h2>
+        <select name="role" class="custom-select" required>
+
+          <option value="student">STUDENT</option>
+          <option value="professor">PROFESSOR</option>
+
+        </select>
+
+
+
+        <div class="input-field">
+          <i class="fas fa-envelope"></i>
+          <input type="text" name="username" placeholder="Username" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" name="password" placeholder="Password" />
+        </div>
+        <input type="submit" class="btn" value="Sign up" />
+
+      </form>
+    </div>
+  </div>
+
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content">
+        <h3>New here ?</h3>
+        <p>
+          Creat your New Account
+
+        </p>
+        <button class="btn transparent" id="sign-up-btn">
+          Sign up
+        </button>
+      </div>
+      <img src="{% static 'img/log.svg' %}" class="image" alt="" />
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>One of us ?</h3>
+        <p>
+          Enter in your Profile if it is already exist
+
+        </p>
+        <button class="btn transparent" id="sign-in-btn">
+          Sign in
+        </button>
+      </div>
+      <img src="{% static 'img/register.svg' %}" class="image" alt="" />
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+
+
+
+
+{% block js_link %}
+<script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+<script src="{% static 'app2.js' %}"></script>
+{% endblock js_link %}

@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block title %}
+  Home
+{% endblock title %}
+  
+
+
+
+{% block css_link %}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock css_link %}
+  
+
+
+{% block style %}
+<style>
+  body {
+    background-color: aqua;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+  }
+
+
+  .topnav {
+    overflow: hidden;
+    background-color: rgb(134, 131, 161);
+  }
+
+  .topnav a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+
+  #log {
+    margin: 0px 10px;
+    padding: 0px 10px;
+
+  }
+
+  #log a {
+    float: right;
+    background-color: #0b71d1;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: rgb(255, 255, 255);
+  }
+
+
+  h1 {
+    font-size: 50px;
+    color: rgb(20, 92, 76);
+
+  }
+
+  .carousel-inner img {
+    width: 80%;
+    height: 70%;
+  }
+</style>
+{% endblock style %}
+
+
+
+{% block content %}
+
+<div>
+  <div style="padding-center:16px">
+    <div align="center">
+      <h2 style="color:rgb(37, 170, 19)">Student Tracking System</h2>
+
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+          <li data-target="#demo" data-slide-to="0" class="active"></li>
+          <li data-target="#demo" data-slide-to="1"></li>
+          <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img/clg1.jpg' %}" alt="Los Angeles" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/clg2.jpg' %}" alt="Chicago" width="1100" height="500">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'img/clg3.jpeg' %}" alt="New York" width="1100" height="500">
+          </div>
+        </div>
+
+        <div>
+          <h1>WELCOME TO GMIT STUDENT TRACKING SYSTEM</h1>
+
+        </div>
+      </div>
+
+      <footer class="ftco-footer ftco-section">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Brief</h2>
+              <p>YourDictionary’s thesaurus is an easy-to-use online resource with a variety of different words. We’re
+                not just a dictionary providing you definitions to show you the meaning of words, we will help you to
+                enhance your writing by providing you with synonyms and related terms.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Menu</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Record</a></li>
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Home</a></li>
+                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Help</h2>
+              <div class="d-flex">
+                <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
+                  <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
+                  <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+                </ul>
+                <ul class="list-unstyled">
+                  <li><a href="#" class="py-2 d-block">FAQs</a></li>
+                  <li><a href="#" class="py-2 d-block">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li><span class="icon icon-map-marker"></span><span class="text">Baruipur, Kolkata, West Bengal,
+                      India</span></li>
+                  <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 7781821986</span></a>
+                  </li>
+                  <li><a href="#"><span class="icon icon-envelope"></span><span
+                        class="text">sayandey450@gmail.com</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made
+              with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="#" target="_blank">SAYAN</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
+        </div>
+
+      </footer>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+  
+
+
+
+{% block js_link %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock js_link %}
+  

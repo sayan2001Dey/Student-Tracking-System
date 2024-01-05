@@ -1,1 +1,1 @@
-web: gunicorn CCms.wsgi --log-file -
+web:waitress-serve --port==8000 sayandjlist.wsgi:application
